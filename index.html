@@ -51,7 +51,7 @@
 
                   <section  class="title">
                     <h1>JGiven: Pragmatic BDD for Java</h1>
-                      <h2 style="margin-top:60px; margin-bottom: 40px; color: #444">Dr. Jan Schäfer</h2>
+                      <h2 style="margin-top:60px; margin-bottom: 40px; color: #444">Jan Schäfer</h2>
                       <a href="http://tngtech.com"><img  style="margin-bottom:20px; margin-top:0px; height:40px;" src="img/tng.svg" /></a>
                       <h3>Sep 20, 2016</h3>
                       <img style="background-color:  white; padding: 0px;" width="400" src="img/javaonelogo.png" /> 
@@ -73,7 +73,7 @@
                     </a>
                   </section>
                   <section>
-                    <h2>Typical Test</h2>
+                    <h2>Normal Test</h2>
                     <aside class="notes">
                       Kann nicht zur Kommunikation mit Domain-Experten genutzt werden<br />
                       Carola und Henning: Minimal viable product: Muss als Testfall formuliert werden können
@@ -106,6 +106,7 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
 
 <!--                    <img src="img/tdd.svg"> -->
                   </section>
+<!--
                   <section>
                     <h2>Issues with typical JUnit tests</h2>
           <ul class="fa-ul bad">
@@ -116,7 +117,8 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
           </ul>
 
                   </section>
-
+-->
+<!--
                   <section>
                     <h2>Behavior-Driven Development</h2>
                       <ul>
@@ -129,8 +131,9 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
                     </aside>
 
                   </section>
+-->
                   <section>
-                    <h2>Example</h2>
+                    <h2>BDD Scenario</h2>
                     <pre><code class="gherkin" data-trim>
   Scenario: Pets can be assigned to pet owners
 
@@ -178,7 +181,7 @@ Scenario: new pets can be assigned to existing owners
                   <section>
                     <h1>BDD in Java</h1>
                   </section>
-
+<!--
         <section>
           <h2>
           <img class="plain" src="img/cucumber.png" />
@@ -233,14 +236,18 @@ public class CustomerStepdefs {
             <li>Developers have to maintain the feature files</li>
           </ul>
         </section>
-
-        <section>
-            <h2>BDD Frameworks for Java</h2>
-            <ul>
+-->
+        <section  style="text-align:left">
+            <h2 style="text-align:center">BDD Frameworks for Java</h2>
+	    <h3 style="text-align:center">"Classical"</h3>
+            <ul style="margin-left:5em">
               <li class="nowrap">Cucumber: Plain Text + Java</li>
               <li class="nowrap">JBehave: Plain Text + Java</li>
               <li>Concordion: HTML + Java</li>
               <li>Fitness: Wiki + Java</li>
+	    </ul>
+	    <h3 style="text-align:center">Developer-friendly</h3>
+	    <ul style="margin-left:5em">
               <li>Spock: Groovy</li>
               <li>ScalaTest: Scala</li>
               <li>Jnario: Xtend</li>
@@ -283,15 +290,16 @@ public class CustomerStepdefs {
         <section>
           <h2>Goals</h2>
           <ul class="fa-ul goal">
-            <li>Developer friendly (low maintancence overhead)</li>
-            <li>Readable tests in in Given-When-Then-Form (BDD)</li>
-            <li>Reusability of test code</li>
-            <li>Readable by domain experts</li>
+            <li>Developer friendly (low maintenance overhead)</li>
+            <li>Readable test code (Given-When-Then)
+            <li>Modular and reusable test code</li>
+            <li>Reports for domain experts</li>
           </ul>
         </section>
 
         <section>
-          <h1 style="opacity: 0.8; background: none; border:none; box-shadow:none; -webkit-text-stroke: 2px #555; font-size: 200px; color: white; text-shadow: 5px 5px 15px black">Demo</h1>
+	  <h1>Demo</h1>
+<!--          <h1 style="opacity: 0.8; background: none; border:none; box-shadow:none; -webkit-text-stroke: 2px #555; font-size: 200px; color: white; text-shadow: 5px 5px 15px black">Demo</h1> -->
         </section>
 
         <section>
@@ -658,6 +666,11 @@ public SELF a_book() { ... }</code></pre>
      </div>
      </section>
 
+     <section>
+       <h2>Inline Attachments</h2>
+       <img src="img/attachment-dog.png" />
+       <div style="font-size: 20px">Source: https://github.com/mthuret/xke-jgiven</div>
+     </section>  
 
    </section>
 
@@ -699,7 +712,7 @@ public SELF a_book() { ... }</code></pre>
      <h3>@JanSchfr</h3>
      <a href="http://jgiven.org"><h3>jgiven.org</h3></a>
      <a href="https://github.com/TNG/JGiven"><h3>github.com/TNG/JGiven</h3></a>
-     <a href="https://janschaefer.github.io/jgiven-slides-javaone-2016/"><h3>https://janschaefer.github.io/jgiven-slides-javaone-2016/</h3></a>
+     <a  href="https://janschaefer.github.io/jgiven-slides-javaone-2016/"><h3 style="font-size: 70%; color:#444">https://janschaefer.github.io/jgiven-slides-javaone-2016/</h3></a>
      <p style="margin-top:50px">
      <a href="http://tngtech.com"><img  style="margin-bottom:20px; margin-top:-10px; height:40px;" src="img/tng.svg" /></a>
      </p>
