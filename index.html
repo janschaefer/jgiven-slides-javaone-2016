@@ -73,7 +73,7 @@
                     </a>
                   </section>
                   <section>
-                    <h2>Normal Test</h2>
+                    <h2>Typical Test</h2>
                     <aside class="notes">
                       Kann nicht zur Kommunikation mit Domain-Experten genutzt werden<br />
                       Carola und Henning: Minimal viable product: Muss als Testfall formuliert werden können
@@ -106,34 +106,35 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
 
 <!--                    <img src="img/tdd.svg"> -->
                   </section>
-<!--
                   <section>
-                    <h2>Issues with typical JUnit tests</h2>
+                    <h2>Issues with typical tests</h2>
           <ul class="fa-ul bad">
-           <li class="fragment">Many technical and irrelevant details</li>
-           <li class="fragment">Point of the test often hard to grasp</li>
-           <li class="fragment">Code duplication</li>
-           <li class="fragment"><b>Can only be read by developers</b></li>
+           <li>Many technical and often irrelevant details</li>
+           <li>Point of the test often hard to grasp</li>
+           <li>Code duplication</li>
+           <li><b>Can only be read by developers</b></li>
+	   <li><b>Cannot be used as documentation</b></li>
           </ul>
 
                   </section>
--->
-<!--
+
+
                   <section>
                     <h2>Behavior-Driven Development</h2>
                       <ul>
-                        <li>Tests are written as <b>Scenarios</b></li>
-                        <li>Scenarios are written in a common <b>domain language</b> understandable by business owners</li>
-                        <li>Typically in the Given-When-Then format</li>
+                        <li>Behavior is described in a common <b>domain language</b> understandable by domain experts</li>
+			<li>Domain experts and developers <b>collaborate</b> on defining the behavior</li>
+			<li>Executable like normal tests</li>
+			<li>Result in a <b>living documentation</b></li>
                       </ul>
                     <aside class="notes">
                       Working software over comprehensive documentation
                     </aside>
 
                   </section>
--->
+
                   <section>
-                    <h2>BDD Scenario</h2>
+                    <h2>BDD Example</h2>
                     <pre><code class="gherkin" data-trim>
   Scenario: Pets can be assigned to pet owners
 
@@ -181,7 +182,6 @@ Scenario: new pets can be assigned to existing owners
                   <section>
                     <h1>BDD in Java</h1>
                   </section>
-<!--
         <section>
           <h2>
           <img class="plain" src="img/cucumber.png" />
@@ -236,7 +236,7 @@ public class CustomerStepdefs {
             <li>Developers have to maintain the feature files</li>
           </ul>
         </section>
--->
+
         <section  style="text-align:left">
             <h2 style="text-align:center">BDD Frameworks for Java</h2>
 	    <h3 style="text-align:center">"Classical"</h3>
@@ -370,9 +370,9 @@ public class WhenSearching extends Stage&lt;WhenSearching&gt; {
             <li>Over 3000 Scenarios</li>
             <li>Readability and reusability of test code has been greatly improved</li>
             <li>Maintenance costs of automated tests have been <b>reduced</b> (no hard numbers)</li>
-            <li>Developers and domain experts work <b>together</b> on the scenarios</li>
             <li>Well accepted by developers</li>
             <li>Easy to learn by new developers</li>
+            <li>Developers and domain experts work <b>together</b> on the scenarios</li>
           </ul>
 <!--
             <li>1. October 2013: First usage in project</li>
@@ -393,6 +393,52 @@ public class WhenSearching extends Stage&lt;WhenSearching&gt; {
      <section>
         <section>
           <h1>Further Features</h1>
+        </section>
+
+        <section>
+          <h2>Parameterized Scenarios</h2>
+          <pre><code>@Test
+@DataProvider({
+   "Smith, 1",
+   "Davis, 0",
+   "Sm, 1"})
+public void should_find_owner_by_last_name( String searchTerm, 
+	                                    int numberOfResults ) {
+
+    given().an_owner_with_last_name("Smith");
+
+    when().searching_for(searchTerm);
+
+    then().exactly_$_owner_is_found(numberOfResults);
+}</code></pre>
+<small>
+Uses the DataProviderRunner (<a href="https://github.com/TNG/junit-dataprovider">github.com/TNG/junit-dataprovider</a>).<br> Parameterized Runner and Theories of JUnit are also supported.
+</small>
+        </section>
+
+	<section>
+	  <h2>Parameterized Scenarios</h2>
+          <h3>Console Output</h3>
+<pre><code> Should find owner by last name
+
+   Given an owner with last name Smith
+    When searching for &lt;searchTerm&gt;
+    Then exactly &lt;numberOfResults&gt; owner is found
+
+  Cases:
+
+   | # | searchTerm | numberOfResults | Status  |
+   +---+------------+-----------------+---------+
+   | 1 | Smith      |               1 | Success |
+   | 2 | Davis      |               0 | Success |
+   | 3 | Sm         |               1 | Success |
+</code></pre>
+        </section>
+
+	<section>
+	  <h2>Parameterized Scenarios</h2>
+	  <h3>HTML Report</h3>
+     <img src="img/parameterized.png" />
         </section>
 
         <section>
@@ -542,7 +588,7 @@ public class GivenSteps extends Stage&lt;GivenSteps&gt; {
 
     @BeforeScenario
     void setupTemporaryFolder() {
-	    temporaryFolder = ...
+        temporaryFolder = ...
     }
 
     @AfterScenario
@@ -718,7 +764,7 @@ public SELF a_book() { ... }</code></pre>
      </p>
 
    </section>
-   
+   <!--
    <section>
      <section>
        <h1>Backup Slides</h1>
@@ -959,7 +1005,7 @@ public void the_stock_is_only_reduced_when_possible(
 
 
       </section>
-
+-->
 
 
 			</div>
