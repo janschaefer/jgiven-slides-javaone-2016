@@ -183,6 +183,8 @@ Scenario: new pets can be assigned to existing owners
                   <section>
                     <h1>BDD in Java</h1>
                   </section>
+<!--
+
         <section>
           <h2>
           <img class="plain" src="img/cucumber.png" />
@@ -220,9 +222,9 @@ public class CustomerStepdefs {
 
 
         <section>
-          <h2>Problems</h2>
+          <h2>Disadvantages</h2>
           <ul class="fa-ul bad">
-            <li>Feature files and code must be kept in sync</li>
+            <li>Feature files and patterns must be kept in sync</li>
             <li>Programming language features cannot be used in feature files</li>
             <li>Limited IDE support (e.g. refactoring)</li>
           </ul>
@@ -237,23 +239,29 @@ public class CustomerStepdefs {
             <li>Developers have to maintain the feature files</li>
           </ul>
         </section>
-
-        <section  style="text-align:left">
-            <h2 style="text-align:center">BDD Frameworks for Java</h2>
-	    <h3 style="text-align:center">"Classical"</h3>
-            <ul style="margin-left:5em">
+-->
+        <section>
+            <h2 style="text-align:center">"Classical" BDD Frameworks</h2>
+            <ul>
               <li class="nowrap">Cucumber: Plain Text + Java</li>
               <li class="nowrap">JBehave: Plain Text + Java</li>
               <li>Concordion: HTML + Java</li>
               <li>Fitness: Wiki + Java</li>
 	    </ul>
-	    <h3 style="text-align:center">Developer-friendly</h3>
-	    <ul style="margin-left:5em">
+            <h3><i class="fa fa-arrow-circle-right"></i> Additional maintenance cost</h3>
+	</section>
+
+	<section>
+	    <h2 style="text-align:center">Developer-friendly BDD Frameworks</h2>
+	    <ul>
               <li>Spock: Groovy</li>
               <li>ScalaTest: Scala</li>
               <li>Jnario: Xtend</li>
-              <li>Serenity (similar concepts as JGiven)</li>
+	      <li>Serenity*: Java</li>
             </ul>
+<!--            <h3><i class="fa fa-arrow-circle-right"></i> Java?</h3> -->
+            <h3></h3>
+	    <span style="font-size:50%">*strongly focused on web testing, shares some concepts with JGiven</span>
         </section>
 
         <section data-background="img/wantedposter.jpg" data-background-size="500px">
@@ -359,8 +367,8 @@ public class WhenSearching extends Stage&lt;WhenSearching&gt; {
           <h2>HTML5 App</h2>
           <a target="_blank" href="examplereport/index.html"><img height="400px" src="img/jgivenhtml5app2.png"/></a>
             <ul>
-              <li><a style="font-size: 30px" href="http://jgiven.org/jgiven-report/html5/">jgiven.org/jgiven-report/html5/</a> <a href="file:///home/jan/git/github/jgiven/jgiven-tests/build/reports/jgiven/html5/index.html" style="font-size:20px">(Local)</a></li>
-              <li><a style="font-size: 30px" href="https://github.com/mthuret/xke-jgiven/">https://github.com/mthuret/xke-jgiven</a> <a href="file:///home/jans/github/xke-jgiven/target/jgiven-reports/html/index.html" style="font-size:20px">(Local)</a></li>
+              <li><a style="font-size: 30px" href="http://jgiven.org/jgiven-report/html5/">jgiven.org/jgiven-report/html5/</a> <a target="_blank" href="file:///home/jan/git/github/jgiven/jgiven-tests/build/reports/jgiven/html5/index.html" style="font-size:20px">(Local)</a></li>
+              <li><a style="font-size: 30px" href="https://github.com/mthuret/xke-jgiven/">https://github.com/mthuret/xke-jgiven</a> <a target="_blank" href="file:///home/jans/github/xke-jgiven/target/jgiven-reports/html/index.html" style="font-size:20px">(Local)</a></li>
             </ul>
         </section>
 
@@ -744,11 +752,12 @@ public SELF a_book() { ... }</code></pre>
             <li class="fragment fade-in">Open Source (Apache 2 Licence)</li>
             <li class="fragment fade-in">Maven and Jenkins plugins</li>
             <li class="fragment fade-in">Nice reports for domain experts</li>
-            <li class="fragment fade-in not">Domain experts can <b>not write</b> scenarios</li>
+            <li class="fragment fade-in not">Domain experts can <b>not write</b> scenarios in JGiven<br>
+	  <span style="font-size: 70%">(But they can write it in any format and developers can easily translate them to JGiven)</span>
+	    </li>
           </ul>
           <p>
           <h3 class="fragment fade-in">BDD without the hassle!</h3>
-
         </section>
 
       </section>
